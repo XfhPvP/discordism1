@@ -1,7 +1,17 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const token = "MzY5NTY5OTc2NTE3OTE4NzIw.DMacZA.9qy_OMf_4LtLla252tMaesDcN6c";
 const prefix = ">";
+
+var dice = [
+
+  "You rolled a 1!",
+  "You rolled a 2!",
+  "You rolled a 3!",
+  "You rolled a 4!",
+  "You rolled a 5!",
+  "You rolled a 6!",
+
+];
 
 var fortunes = [
   "It is decidedly so",
@@ -84,6 +94,59 @@ client.on('message', message => {
 
   }
 
+  if (command === ">spam") {
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    message.channel.send("** Spam **")
+    
+
+  }
+
   if (command === "invite") {
   var embed = new Discord.RichEmbed()
   .setColor(0x0000a0)
@@ -113,4 +176,4 @@ client.on('message', message => {
 }
 });
 
-client.login(token);
+client.login(process.env.BOT_TOKEN);
