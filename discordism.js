@@ -97,6 +97,7 @@ client.on('message', message => {
     .addField(">ping", "Check the ping of the bot")
     .addField(">invite", "Displays an invite link to the discord.")
     .addField(">hi", "Replies with a friendly hello.")
+    .addField(">8ball <question>", "Replies with a yes, no, or a other message")
     .addField(">whatisthis", "Another command that displays the bot info.")
     .setColor(0x0000a0)
     .setFooter("These commands are still in development and may not work correctly.")
