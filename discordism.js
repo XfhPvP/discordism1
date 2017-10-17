@@ -63,15 +63,27 @@ client.on('message', message => {
   }
   if (command === "forcepurge") {
 
-    let foundersRole = message.guild.roles.find("name", "Operators");
-     if(!message.member.roles.has(foundersRole.id)) {
-     return message.reply("**You do not have the correct role to execute this command.**");
+    async function purge() {
+    message.delete();
 
-   }
 
-    let messagecount = parseInt(100);
-    message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
-    return message.channel.send("**100** messages were forcefully removed by an Operator.")
+   let foundersRole = message.guild.roles.find("name", "Operators");
+    if(!message.member.roles.has(foundersRole.id)) {
+    return message.reply("**You do not have the correct role to execute this command.**");
+  }
+      if (isNaN(args[0])) {
+      message.channel.send("**Correct Usage: >purge <messages>")
+      return;
+    }
+  const fetched = await message.channel.fetchMessages({limit: args[0]});
+  message.channel.send("**" + fetched.size + "** messages were forcefully removed by an Operator.");
+
+  message.channel.bulkDelete(fetched)
+    .catch(error => message.channel.send(`Error: ${error}`));
+
+  }
+  purge();
+
 
 }
 
@@ -110,7 +122,6 @@ client.on('message', message => {
   } else {
     message.channel.send("🎱  |  **Usage: >8ball <question>**");
   }
-    
 }
 });
 
