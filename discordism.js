@@ -62,28 +62,29 @@ client.on('message', message => {
   message.channel.send("``For a command list, use >commands``");
   }
   if (command === "forcepurge") {
+      async function purge() {
+          message.delete();
 
-    async function purge() {
-    message.delete();
+
+          if (!message.member.roles.find("name", "Operators")) { //
+              message.channel.send('**You do not have the correct role to use this command**');
+              return;
+          }
 
 
-   let foundersRole = message.guild.roles.find("name", "Operators");
-    if(!message.member.roles.has(foundersRole.id)) {
-    return message.reply("**You do not have the correct role to execute this command.**");
-  }
-      if (isNaN(args[0])) {
-      message.channel.send("**Correct Usage: >purge <messages>")
-      return;
-    }
-  const fetched = await message.channel.fetchMessages({limit: args[0]});
-  message.channel.send("**" + fetched.size + "** messages were forcefully removed by an Operator.");
+          if (isNaN(args[0])) {
+              message.channel.send('*Correct Usage:*  **>forcepurge <args>**');
 
-  message.channel.bulkDelete(fetched)
-    .catch(error => message.channel.send(`Error: ${error}`));
+              return;
+          }
 
-  }
-  purge();
+          const fetched = await message.channel.fetchMessages({limit: args[0]});
+          message.channel.send("**" + fetched.size + "** messages have been forcefully removed by an Operator." + " (" + message.author.toString() + ")");
 
+          message.channel.bulkDelete(fetched)
+              .catch(error => message.channel.send(`Error: ${error}`));
+            }
+purge();
 
 }
 
@@ -125,4 +126,4 @@ client.on('message', message => {
 }
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login("process.env.BOT_TOKEN");
