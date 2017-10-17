@@ -110,6 +110,7 @@ client.on('message', message => {
   } else {
     message.channel.send("🎱  |  **Usage: >8ball <question>**");
   }
+    
 }
 });
 
