@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const token = "MzY5NTY5OTc2NTE3OTE4NzIw.DMacZA.9qy_OMf_4LtLla252tMaesDcN6c";
 const prefix = ">";
 
 var fortunes = [
