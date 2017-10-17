@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const token = "MzY5NTY5OTc2NTE3OTE4NzIw.DMacZA.9qy_OMf_4LtLla252tMaesDcN6c";
 const prefix = ">";
 
 var fortunes = [
@@ -77,7 +78,7 @@ client.on('message', message => {
   if (command === "ping") {
   var embed = new Discord.RichEmbed()
   .setColor(0x0000a0)
-  .setDescription('⏰  |  **Ping:** `' + `${Date.now() - message.createdTimestamp}` + ' ms`')
+  .setDescription('⏰  |  **Pong!** `' + `${Date.now() - message.createdTimestamp}` + ' ms`')
   message.channel.send(embed);
 
 
@@ -94,6 +95,7 @@ client.on('message', message => {
      var embed = new Discord.RichEmbed()
     .addField("Discordism | Help", "Below are the commands that are currently available.")
     .addField(">help", "Displays the info of the bot.")
+    .addField(">ping", "Check the ping of the bot")
     .addField(">invite", "Displays an invite link to the discord.")
     .addField(">hi", "Replies with a friendly hello.")
     .addField(">whatisthis", "Another command that displays the bot info.")
@@ -111,4 +113,4 @@ client.on('message', message => {
 }
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(token);
