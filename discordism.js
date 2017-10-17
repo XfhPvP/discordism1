@@ -2,16 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = ">";
 
-var dice = [
-
-  "You rolled a 1!",
-  "You rolled a 2!",
-  "You rolled a 3!",
-  "You rolled a 4!",
-  "You rolled a 5!",
-  "You rolled a 6!",
-
-];
 
 var fortunes = [
   "It is decidedly so",
@@ -90,60 +80,6 @@ client.on('message', message => {
   .setColor(0x0000a0)
   .setDescription('⏰  |  **Pong!** `' + `${Date.now() - message.createdTimestamp}` + ' ms`')
   message.channel.send(embed);
-
-
-  }
-
-  if (command === ">spam") {
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    message.channel.send("** Spam **")
-    
 
   }
 
