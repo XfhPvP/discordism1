@@ -73,7 +73,7 @@ client.on('message', message => {
 
 
           if (isNaN(args[0])) {
-              message.channel.send('*Correct Usage:*  **>forcepurge <args>**');
+              message.channel.send('*Correct Usage:*  **>forcepurge <2-100>**');
 
               return;
           }
